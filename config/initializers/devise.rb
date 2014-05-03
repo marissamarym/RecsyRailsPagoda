@@ -12,6 +12,9 @@ Devise.setup do |config|
   # with default "from" parameter.
   config.mailer_sender = 'no-reply@recsy.com'
 
+  require 'omniauth-linkedin'
+  config.omniauth :linkedin, "751q1szfwv7d4g", "dOWeo52OovVuZSjI"
+
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
 

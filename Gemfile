@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 # App dependencies
 gem 'devise'
+gem 'omniauth'
+gem 'omniauth-linkedin' 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.0'
