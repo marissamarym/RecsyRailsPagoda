@@ -1,7 +1,10 @@
-Welcome to Recsy!
-<% if user_signed_in? %>
-    Signed in as <%= current_user.name %>. Not you?
-    <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
-<% else %>
-    <%= link_to "Sign in with Linkedin", user_omniauth_authorize_path(:linkedin) %>
-<% end %>
+<div class="banner home"> 
+   	<div class="container">
+    		<div class="row">
+    			<h1>Hi, We are Rec-Sy</h1>
+    			<h2>and We Want To Be Your</h2>
+    			<h2>___________</h2>
+    			<a href="#" class="btn btn-lg btn-primary">Create Your Website</a>
+    		</div><!--end row-->
+    	</div><!-- /.container -->
+	 </div><!--end homebanner-->
