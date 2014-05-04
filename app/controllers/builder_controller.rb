@@ -14,8 +14,13 @@ class BuilderController < ApplicationController
         # The template should be using this for every http request
         @path = '/templates/zach'
         @homeSection = Section.where(user_id: current_user.id).first
-        @nameField = @homeSection.section_text_items.first
-        @addressField = @homeSection.section_text_items[1]
+        @nameField = { text: '' }
+        @addressField = { text: '' }
+        begin
+            @nameField = @homeSection.section_text_items.first
+            @addressField = @homeSection.section_text_items[1]
+        rescue
+        end
         render "#{@publicPath.to_s}/#{@path}/index.html.erb", layout: false
     end
 
