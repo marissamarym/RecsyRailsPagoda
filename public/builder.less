@@ -13,6 +13,7 @@
 	background-color: @background;
 	box-shadow: 8px 8px 0px @shadow;
 	color: #fff;
+	margin-bottom: 60px;
 }
 iframe {
    	width: 100%;
@@ -49,7 +50,7 @@ iframe {
 		border: none;
 		border-bottom: 2px solid @background;
 		border-radius: 0px;
-		font-size: 20px;
+		font-size: 14px;
 	}
 	li a {
 		background: @shadow;
@@ -58,10 +59,13 @@ iframe {
 		border: none;
 		border-bottom: 2px solid @shadow;
 		border-radius: 0px;
-		font-size: 20px;
+		font-size: 14px;
 	}
 }
 label {
 	font-size: 20px;
 	font-weight: normal;
+	@media (max-width: 1199px) {
+		font-size: 16px;
+	}
 }
