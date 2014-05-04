@@ -17,10 +17,20 @@
             <li><a href="#<%= section.id %>"data-toggle="tab"><%= section.section_type.name %></a></li>
             <% end %>
 		</ul>
+		<div class="add-section">
+       		<%= form_tag({ controller: 'builder', action: 'add_section' }, { class: 'form-horizontal' }) do %>
+            	<select name="section_type_id">
+                	<% @sectionTypes.each do |type| %>
+                    	<option value="<%= type.id %>"><%= type.name %></option>
+                	<% end %>
+            	</select>
+            	<button type="submit" class="btn btn-update">Add Section</button>
+        	<% end %>
+    	</div>
     	<div class="wrapper form">
     	<div class="tab-content">
     		<% @sections.each do |section| %>
-    		<div class="<% if section.id == 1 %> tab-pane active <% else %> tab-pane <% end %>" id="#<%= section.id %>">
+    			<div class="<% if section.id == 1 %> tab-pane active <% else %> tab-pane <% end %>" id="#<%= section.id %>">
     		<% end %>
         		<%= form_tag({ controller: 'builder', action: 'update' }, { class: 'form-horizontal' }) do %>
             	<!-- Foreach over the different fields in a section -->
@@ -29,22 +39,12 @@
             			<button type="submit" class="btn btn-remove">Remove Section</button>
             		</div>
             		<div class="col-md-6">
-            			<div class="add-section">
-       						<%= form_tag({ controller: 'builder', action: 'add_section' }, { class: 'form-horizontal' }) do %>
-            					<select name="section_type_id">
-                					<% @sectionTypes.each do |type| %>
-                    					<option value="<%= type.id %>"><%= type.name %></option>
-                					<% end %>
-            					</select>
-            				<button type="submit" class="btn btn-update">Add Section</button>
-        					<% end %>
-    					</div>
             		</div>
             	</div>
             	<div class="form-group">
                 	<label for="name" class="col-sm-3 control-label">Name</label>
                 	<div class="col-sm-9">
-                    	<input type="text" class="form-control" name="name" placeholder="Name">
+                    	<input type="text" class="form-control" name="name">
                 	</div>
             	</div>
             	<div class="form-group">
