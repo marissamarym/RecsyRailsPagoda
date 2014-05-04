@@ -15,7 +15,7 @@
                             <br>
                             <br>
                             <br>
-                            <p><% unless user_signed_in? %>
+                            <p><% if user_signed_in? %>
                                 Sign in 
                                 <% else %>
                                 <%= link_to "Sign in", user_omniauth_authorize_path(:linkedin) %>
