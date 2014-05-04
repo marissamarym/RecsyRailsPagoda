@@ -3,7 +3,7 @@ class WelcomeController < ApplicationController
     def index
 
     end
-	 def plans
+    def plans
 
-	 end
+    end
 end
