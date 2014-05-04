@@ -21,8 +21,20 @@
         </div>
     </div>
     <div class="col-sm-5">
+        <%= form_tag({ controller: 'builder', action: 'add_section' }, { class: 'form-horizontal' }) do %>
+            <select name="section_type_id">
+                <% @sectionTypes.each do |type| %>
+                    <option value="<%= type.id %>"><%= type.name %></option>
+                <% end %>
+            </select>
+            <button type="submit">Add Section</button>
+        <% end %>
+        <hr>
         <!-- Foreach over the different sections -->
-        <%= form_tag(controller: 'builder', action: 'update', class: 'form-horizontal') do %>
+        <% @sections.each do |section| %>
+            <div><%= section.section_type.name %></div>
+        <% end %>
+        <%= form_tag({ controller: 'builder', action: 'update' }, { class: 'form-horizontal' }) do %>
             <!-- Foreach over the different fields in a section -->
             <div class="form-group">
                 <label for="name" class="col-sm-2 control-label">Name</label>
