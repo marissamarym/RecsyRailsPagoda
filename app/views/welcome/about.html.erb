@@ -1,0 +1,70 @@
+<style>body{background-image:url('/../samples/sample-03/img/square_bg.png'); background-repeat:repeat;}</style> 
+<link rel="stylesheet" href="/flat-ui/css/flat-ui.css">
+        <link rel="stylesheet" href="/samples/sample-03/css/style.css">       
+        <div class="page-wrapper">
+
+            <!-- price-1 -->
+            <section class="price-1">
+                <div class="container">
+                    <h3>Relax.</h3>
+                    <p class="lead">
+                    	Let us take the <i>stress</i> out of your next career step
+                    </p>
+                    <div class="row">
+                            <img src="/../images/recsy..job.png" width="75%" class="center-block"/>
+                            <br>
+                            <br>
+                            <br>
+                            <p><% if user_signed_in? %>
+                                Sign in 
+                                <% else %>
+                                <%= link_to "Sign in", user_omniauth_authorize_path(:linkedin) %>
+                                <% end %>
+                                with LinkedIn and see your personal website come to life in seconds. Upload your projects and let people see what makes you you. <b>56% of hiring managers</b> were more impressed with a candidate's website than any other branding tool. What's a better way to spend the next five minutes?
+                            </p>
+                            <br>
+                        	<p>
+                        		<b>Who are we?</b> We're your career expert, cheerleader, personal website builder, connection to recruiters. We're two recent college grads who <i>get</i> what it's like to have to represent yourself on one black-and-white page when you're <i>so</i> much more than a resume. At Recsy, we want the <i>real</i> you to shine in a way that gets <b>noticed</b> by recruiters.
+                        	</p>
+                        	<br>
+                        	<p>
+                        	Finding a job, internship, or getting into grad school is hard. Let Recsy make it easier for you. So relax ;). You've earned it.
+                        	</p>
+
+
+                    </div>
+                </div>
+            </section>
+        </div>
+       </div>
+<!-- footer-3 -->
+            <footer class="footer-3">
+                <div class="container">
+                    <div class="row v-center">
+                        <div class="col-sm-2">
+                            <a class="brand" href="#">Recsy</a>
+                        </div>
+                        <div class="col-sm-7">
+                            <div class="additional-links">
+                                
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <h6>Nashville, TN</h6>
+                            <div class="address">
+                                Built at HackNashville 5
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="/common-files/js/jquery-1.10.2.min.js"></script>
+        <script src="/flat-ui/js/bootstrap.min.js"></script>
+        <script src="/common-files/js/modernizr.custom.js"></script>
+        <script src="/common-files/js/startup-kit.js"></script>
+        <script src="/samples/sample-03/js/script.js"></script>
+    </body>
+</html>
