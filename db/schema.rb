@@ -11,16 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140504025925) do
+ActiveRecord::Schema.define(version: 20140504151841) do
 
-  create_table "section_types", force: true do |t|
-    t.string   "name"
+  create_table "section_fields", force: true do |t|
+    t.integer "section_type_id"
+    t.string  "field_table_name"
+    t.string  "label"
+  end
+
+  create_table "section_text_items", force: true do |t|
+    t.integer  "section_id"
+    t.text     "text"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  create_table "section_types", force: true do |t|
+    t.string "name"
+  end
+
   create_table "sections", force: true do |t|
-    t.string   "title"
     t.integer  "section_type_id"
     t.integer  "user_id"
     t.datetime "created_at"

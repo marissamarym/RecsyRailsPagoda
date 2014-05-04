@@ -5,7 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-SectionType.create(name: "Home")
+first = SectionType.create(name: "Home")
 SectionType.create(name: "Experience")
 SectionType.create(name: "Project")
 SectionType.create(name: "Contact")
+
+SectionField.create(section_type_id: first.id, field_table_name: 'text', label: 'name')
+SectionField.create(section_type_id: first.id, field_table_name: 'text', label: 'address')
