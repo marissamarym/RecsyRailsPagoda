@@ -10,7 +10,8 @@ Rails.application.routes.draw do
   get 'builder/view', to: 'builder#view'
 
   post 'builder/update', to: 'builder#update'
-  post 'builder/add_section', to: 'builder#add_section'
+
+  resources :sections
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
