@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20140504151841) do
 
   create_table "section_text_items", force: true do |t|
     t.integer  "section_id"
+    t.integer  "section_field_id"
     t.text     "text"
     t.datetime "created_at"
     t.datetime "updated_at"

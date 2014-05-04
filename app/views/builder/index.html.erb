@@ -34,9 +34,10 @@
             <div><%= section.section_type.name %></div>
         <% end %>
         <% @sections.each do |section| %>
-            <%= form_tag(section_path(section), { class: 'form-horizontal' }) do %>
+            <%= form_tag(section_path(section), { class: 'form-horizontal', method: 'PUT' }) do %>
                 <% section.section_type.section_fields.each do |field| %>
-                    <%= render "partials/#{field.field_table_name}", field: field %>
+                    <% item = field.send("section_#{field.field_table_name}_item") %>
+                    <%= render "partials/#{field.field_table_name}", field: field, item: item %>
                 <% end %>
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
