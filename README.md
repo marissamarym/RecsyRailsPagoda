@@ -18,10 +18,14 @@ bundle install
 ```
 5. Run DB setup or migrations
 ```
+# If you want to clear out the database
+rm -f db/*.sqlite3 db/schema.rb
 # If this is your first time setting up the application
 rake db:setup
 # Otherwise
 rake db:migrate
+# Add data such as default sections
+rake db:seed
 ```
 5. Start the server with:
 ```
