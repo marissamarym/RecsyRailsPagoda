@@ -4,10 +4,13 @@ Rails.application.routes.draw do
 
   devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }
   root 'welcome#index'
+
   get '/plans', to: 'welcome#plans'
   get '/builder', to: 'builder#index'
   get 'builder/view', to: 'builder#view'
-  get 'builder/update', to: 'builder#update'
+
+  post 'builder/update', to: 'builder#update'
+  post 'builder/add_section', to: 'builder#add_section'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -160,7 +160,10 @@ $(document).ready(function() {
 		$('article.full').hide();
 		$('#snippets').fadeIn();
 	});
-
-
+	
+	// Add Section Toggle
+	$( "#addsection" ).click(function() {
+  		$( ".addsectionContent" ).toggle( "slow" );
+	});
 
 });

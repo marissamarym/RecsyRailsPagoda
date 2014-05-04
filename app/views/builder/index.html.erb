@@ -13,22 +13,38 @@
     <div class="col-sm-5">
     	<!-- Nav tabs -->
 		<ul class="nav nav-tabs">
-  			<li class="active"><a href="#home" data-toggle="tab">Home</a></li>
-  			<li><a href="#experience" data-toggle="tab">Experience</a></li>
-  			<li><a href="#projects" data-toggle="tab">Projects</a></li>
-  			<li><a href="#contact" data-toggle="tab">Contact</a></li>
-  			<li><a href="#addsection" data-toggle="tab"><i class="fa fa-plus"></i></a></li>
+  			<% @sections.each do |section| %>
+            <li><a href="#<%= section.id %>"data-toggle="tab"><%= section.section_type.name %></a></li>
+            <% end %>
 		</ul>
     	<div class="wrapper form">
     	<div class="tab-content">
-    		<div class="tab-pane active" id="home">
-        		<!-- Foreach over the different sections -->
-        		<%= form_tag(controller: 'builder', action: 'update', class: 'form-horizontal') do %>
+    		<% @sections.each do |section| %>
+    		<div class="<% if section.id == 1 %> tab-pane active <% else %> tab-pane <% end %>" id="#<%= section.id %>">
+    		<% end %>
+        		<%= form_tag({ controller: 'builder', action: 'update' }, { class: 'form-horizontal' }) do %>
             	<!-- Foreach over the different fields in a section -->
+            	<div class="form-group">
+            		<div class="col-md-6">
+            			<button type="submit" class="btn btn-remove">Remove Section</button>
+            		</div>
+            		<div class="col-md-6">
+            			<div class="add-section">
+       						<%= form_tag({ controller: 'builder', action: 'add_section' }, { class: 'form-horizontal' }) do %>
+            					<select name="section_type_id">
+                					<% @sectionTypes.each do |type| %>
+                    					<option value="<%= type.id %>"><%= type.name %></option>
+                					<% end %>
+            					</select>
+            				<button type="submit" class="btn btn-update">Add Section</button>
+        					<% end %>
+    					</div>
+            		</div>
+            	</div>
             	<div class="form-group">
                 	<label for="name" class="col-sm-3 control-label">Name</label>
                 	<div class="col-sm-9">
-                    	<input type="text" class="form-control" name="name">
+                    	<input type="text" class="form-control" name="name" placeholder="Name">
                 	</div>
             	</div>
             	<div class="form-group">
@@ -68,196 +84,6 @@
             	</div>
         	<% end %>
        		</div><!--end home-tab-->
-       		<div class="tab-pane" id="experience">
-       			<div class="form-group">
-        			<div class="col-sm-12">
-    	  				<a href="#" class="btn btn-remove">Remove Section</a>
-    	  			</div>
-    			</div>
-       			<!-- Foreach over the different sections -->
-        		<%= form_tag(controller: 'builder', action: 'update', class: 'form-horizontal') do %>
-            	<!-- Foreach over the different fields in a section -->
-            	<div class="form-group">
-                	<label for="name" class="col-sm-3 control-label">Name</label>
-                	<div class="col-sm-9">
-                    	<input type="text" class="form-control" name="name">
-                	</div>
-            	</div>
-            	<div class="form-group">
-                	<label for="tagline" class="col-sm-3 control-label">Tagline</label>
-                	<div class="col-sm-9">
-                    	<input type="text" class="form-control" name="2ndtitle">
-                	</div>
-         		</div>
-            	<div class="form-group">
-                	<label for="Github" class="col-sm-3 control-label">Github</label>
-                	<div class="col-sm-9">
-                    	<input type="text" class="form-control" name="Github">
-                	</div>
-            	</div>
-            	<div class="form-group">
-                	<div class="col-sm-12">
-                    	<button type="submit" class="btn btn-update">Update</button>
-                	</div>
-            	</div>
-        	<% end %>
-       		</div><!--end experience-tab-->
-       		<div class="tab-pane" id="projects">
-       			<div class="form-group">
-        			<div class="col-sm-12">
-    	  				<a href="#" class="btn btn-remove">Remove Section</a>
-    	  			</div>
-    			</div>
-       			<!-- Foreach over the different sections -->
-        		<%= form_tag(controller: 'builder', action: 'update', class: 'form-horizontal') do %>
-            	<!-- Foreach over the different fields in a section -->
-            	<div class="form-group">
-                	<label for="name" class="col-sm-3 control-label">Name</label>
-                	<div class="col-sm-9">
-                    	<input type="text" class="form-control" name="name">
-                	</div>
-            	</div>
-            	<div class="form-group">
-                	<label for="tagline" class="col-sm-3 control-label">Tagline</label>
-                	<div class="col-sm-9">
-                    	<input type="text" class="form-control" name="2ndtitle">
-                	</div>
-         		</div>
-            	<div class="form-group">
-                	<label for="Github" class="col-sm-3 control-label">Github</label>
-                	<div class="col-sm-9">
-                    	<input type="text" class="form-control" name="Github">
-                	</div>
-            	</div>
-            	<div class="form-group">
-                	<label for="Gmail" class="col-sm-3 control-label">Gmail</label>
-                	<div class="col-sm-9">
-                    	<input type="text" class="form-control" name="Gmail">
-                	</div>
-            	</div>
-            	<div class="form-group">
-                	<label for="LinkedIn" class="col-sm-3 control-label">LinkedIn</label>
-                	<div class="col-sm-9">
-                    	<input type="text" class="form-control" name="LinkedIn">
-                	</div>
-            	</div>
-            	<div class="form-group">
-                	<label for="Education" class="col-sm-3 control-label">Education</label>
-                	<div class="col-sm-9">
-                    	<input type="text" class="form-control" name="Education">
-                	</div>
-            	</div>
-            	<div class="form-group">
-                	<div class="col-sm-12">
-                    	<button type="submit" class="btn btn-update">Update</button>
-                	</div>
-            	</div>
-        	<% end %>
-       		</div><!--end projects-tab-->
-       		<div class="tab-pane" id="contact">
-       			<div class="form-group">
-        			<div class="col-sm-12">
-    	  				<a href="#" class="btn btn-remove">Remove Section</a>
-    	  			</div>
-    			</div>
-       			<!-- Foreach over the different sections -->
-        		<%= form_tag(controller: 'builder', action: 'update', class: 'form-horizontal') do %>
-            	<!-- Foreach over the different fields in a section -->
-            	<div class="form-group">
-                	<label for="name" class="col-sm-3 control-label">Name</label>
-                	<div class="col-sm-9">
-                    	<input type="text" class="form-control" name="name">
-                	</div>
-            	</div>
-            	<div class="form-group">
-                	<label for="tagline" class="col-sm-3 control-label">Tagline</label>
-                	<div class="col-sm-9">
-                    	<input type="text" class="form-control" name="2ndtitle">
-                	</div>
-         		</div>
-            	<div class="form-group">
-                	<label for="Github" class="col-sm-3 control-label">Github</label>
-                	<div class="col-sm-9">
-                    	<input type="text" class="form-control" name="Github">
-                	</div>
-            	</div>
-            	<div class="form-group">
-                	<label for="Gmail" class="col-sm-3 control-label">Gmail</label>
-                	<div class="col-sm-9">
-                    	<input type="text" class="form-control" name="Gmail">
-                	</div>
-            	</div>
-            	<div class="form-group">
-                	<label for="LinkedIn" class="col-sm-3 control-label">LinkedIn</label>
-                	<div class="col-sm-9">
-                    	<input type="text" class="form-control" name="LinkedIn">
-                	</div>
-            	</div>
-            	<div class="form-group">
-                	<label for="Education" class="col-sm-3 control-label">Education</label>
-                	<div class="col-sm-9">
-                    	<input type="text" class="form-control" name="Education">
-                	</div>
-            	</div>
-            	<div class="form-group">
-                	<div class="col-sm-12">
-                    	<button type="submit" class="btn btn-update">Update</button>
-                	</div>
-            	</div>
-        	<% end %>
-       		</div><!--end contact-tab-->
-       		<div class="tab-pane" id="addsection">
-       			<div class="form-group">
-        			<div class="col-sm-12">
-    	  				<a href="#" class="btn btn-remove">Remove Section</a>
-    	  			</div>
-    			</div>
-       			<!-- Foreach over the different sections -->
-        		<%= form_tag(controller: 'builder', action: 'update', class: 'form-horizontal') do %>
-            	<!-- Foreach over the different fields in a section -->
-            	<div class="form-group">
-                	<label for="name" class="col-sm-3 control-label">Name</label>
-                	<div class="col-sm-9">
-                    	<input type="text" class="form-control" name="name">
-                	</div>
-            	</div>
-            	<div class="form-group">
-                	<label for="tagline" class="col-sm-3 control-label">Tagline</label>
-                	<div class="col-sm-9">
-                    	<input type="text" class="form-control" name="2ndtitle">
-                	</div>
-         		</div>
-            	<div class="form-group">
-                	<label for="Github" class="col-sm-3 control-label">Github</label>
-                	<div class="col-sm-9">
-                    	<input type="text" class="form-control" name="Github">
-                	</div>
-            	</div>
-            	<div class="form-group">
-                	<label for="Gmail" class="col-sm-3 control-label">Gmail</label>
-                	<div class="col-sm-9">
-                    	<input type="text" class="form-control" name="Gmail">
-                	</div>
-            	</div>
-            	<div class="form-group">
-                	<label for="LinkedIn" class="col-sm-3 control-label">LinkedIn</label>
-                	<div class="col-sm-9">
-                    	<input type="text" class="form-control" name="LinkedIn">
-                	</div>
-            	</div>
-            	<div class="form-group">
-                	<label for="Education" class="col-sm-3 control-label">Education</label>
-                	<div class="col-sm-9">
-                    	<input type="text" class="form-control" name="Education">
-                	</div>
-            	</div>
-            	<div class="form-group">
-                	<div class="col-sm-12">
-                    	<button type="submit" class="btn btn-update">Update</button>
-                	</div>
-            	</div>
-        	<% end %>
-       		</div><!--end addsection-tab-->
       	</div>
     </div>
 </div>
