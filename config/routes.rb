@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   get '/plans', to: 'welcome#plans'
+  get '/about', to: 'welcome#about'
   get '/builder', to: 'builder#index'
   get 'builder/view', to: 'builder#view'
 

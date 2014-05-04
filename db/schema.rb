@@ -20,7 +20,6 @@ ActiveRecord::Schema.define(version: 20140504025925) do
   end
 
   create_table "sections", force: true do |t|
-    t.string   "title"
     t.integer  "section_type_id"
     t.integer  "user_id"
     t.datetime "created_at"
