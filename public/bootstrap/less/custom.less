@@ -9,17 +9,24 @@
 body {
 	padding-top: 50px;
 	font-family: Oswald, sans-sarif;
+	letter-spacing: .5px;
+	background: url('http://subtlepatterns.com/patterns/congruent_pentagon.png');
 }
 
 /***Custom Styles***/
 .navbar-inverse {
-	background-color: @green;
-	border-color: @dark-green;
+	background-color: #595a57;
 	.navbar-nav>li>a {
-		color: #666;
+		color: #fff;
+	}
+	.navbar-nav>li>a:hover{
+		color: @green;
+	}
+	.navbar-nav>li a:active {
+		color: @green;
 	}
 	.navbar-brand {
-		color: #fff;
+		color: @green;
 	}
 }
 
@@ -86,7 +93,10 @@ body {
 	margin-top: 1em;
 	padding-left: 1em;
 	a {
-		color: #666;
+		color: #fff;
+		&:hover {
+			color: @green;
+		}
 	}
 }
 
