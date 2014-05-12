@@ -31,6 +31,8 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 gem 'right_aws', :git => 'git://github.com/rightscale/right_aws.git'
 
+gem 'thin'
+
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 #gem 'spring',        group: :development
 
