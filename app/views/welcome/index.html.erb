@@ -4,7 +4,13 @@
     			<h1>Hi! We're Recsy,</h1>
     			<h2>your new:</h2>
     			<h2 class="rotate">Career Coach, Personal Website Creator, Recruiter Connecter, Online Presence</h2>
-    			<a href="/builder" class="btn btn-lg btn-primary">Create Your Website</a>
+    			<% if user_signed_in? %>
+    				<a href="/builder" class="btn btn-lg btn-primary">Create Your Website</a>
+					<% else %>
+					<a href="/users/auth/linkedin" class="btn btn-lg btn-primary">Create Your Website</a>
+				<% end %>
+
+
     		</div><!--end row-->
     	</div><!-- /.container -->
 	 </div><!--end homebanner-->
