@@ -18,3 +18,4 @@ SectionField.create(section_type_id: two.id, field_table_name: 'text', label: 'L
 SectionField.create(section_type_id: thr.id, field_table_name: 'text', label: 'Field')
 SectionField.create(section_type_id: thr.id, field_table_name: 'text', label: 'Skills')
 SectionField.create(section_type_id: thr.id, field_table_name: 'text', label: 'Best parts')
+

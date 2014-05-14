@@ -6,22 +6,33 @@
 #
 development:
   adapter: postgresql
+  encoding: utf8
   database: recsy_database_development
   pool: 5
   timeout: 5000
   host: localhost
+  username: marissamontgomery
+  password:
+
 
 test:
   adapter: postgresql
+  encoding: utf8
   database: recsy_database_test
   pool: 5
   timeout: 5000
+  username: marissamontgomery
+  password:
 
 production:
   adapter: postgresql
+  encoding: utf8
   database: recsy_database_production
   pool: 5
   timeout: 5000
+  username: marissamontgomery
+  password:
+
 
 
 

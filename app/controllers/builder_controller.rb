@@ -10,7 +10,7 @@ class BuilderController < ApplicationController
     end
 
     def view
-        # Tells the template how to reach it's resources
+        # Tells the template how to reach its resources
         # The template should be using this for every http request
         @path = '/templates/zach'
         @homeSection = Section.where(user_id: current_user.id).first
