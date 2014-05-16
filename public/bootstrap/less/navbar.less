@@ -152,7 +152,7 @@
 
 .navbar-brand {
   float: left;
-  padding: @navbar-padding-vertical @navbar-padding-horizontal;
+  padding: @navbar-padding-vertical;
   font-size: @font-size-large;
   line-height: @line-height-computed;
   height: @navbar-height;
@@ -165,7 +165,6 @@
   @media (min-width: @grid-float-breakpoint) {
     .navbar > .container &,
     .navbar > .container-fluid & {
-      margin-left: -@navbar-padding-horizontal;
     }
   }
 }
