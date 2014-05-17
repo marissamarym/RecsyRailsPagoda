@@ -11,7 +11,7 @@ development:
   pool: 5
   timeout: 5000
   host: localhost
-  username: marissamontgomery
+  username: zachboyette
   password:
 
 
@@ -21,7 +21,7 @@ test:
   database: recsy_database_test
   pool: 5
   timeout: 5000
-  username: marissamontgomery
+  username: zachboyette
   password:
 
 production:
@@ -30,7 +30,7 @@ production:
   database: recsy_database_production
   pool: 5
   timeout: 5000
-  username: marissamontgomery
+  username: zachboyette
   password:
 
 
