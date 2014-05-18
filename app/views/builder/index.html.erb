@@ -34,7 +34,9 @@
 					<%= form_tag(section_path(section), { class: 'form-horizontal', method: 'PUT' }) do %>
 						<div class="form-group">
 							<div class="col-sm-12">
-								<button type="submit" class="btn btn-remove">Remove Section</button>
+								
+								<%= link_to '<button type="submit" class="btn btn-remove">Remove Section</button>'.html_safe, section, method: :delete %>
+								
 							</div>
 						</div>
 						<div class="form-group">
