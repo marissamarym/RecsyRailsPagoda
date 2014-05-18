@@ -35,6 +35,8 @@ gem 'thin'
 
 gem 'bloggy'
 
+gem 'capistrano'
+
 source "https://rubygems.org"
 ruby "1.9.3"
 
