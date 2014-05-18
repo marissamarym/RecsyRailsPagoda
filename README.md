@@ -35,6 +35,8 @@ rails server
 
 To create a post: $rake np <yourposttitle>
 
+Then, be sure to change published: true in config/jekyll/posts/<your post>
+
 To generate the blog html: $rake generate
 
 Then to push it through github:
