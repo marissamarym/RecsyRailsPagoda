@@ -13,7 +13,6 @@ class User < ActiveRecord::Base
             if registered_user
                 return registered_user
             else
-                #is a new user here, should activate capistrano script
                 puts "[INFO] Creating user"
                 puts auth.to_yaml
                 User.create(
