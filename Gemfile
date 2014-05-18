@@ -33,6 +33,8 @@ gem 'right_aws', :git => 'git://github.com/rightscale/right_aws.git'
 
 gem 'thin'
 
+gem 'bloggy'
+
 source "https://rubygems.org"
 ruby "1.9.3"
 
