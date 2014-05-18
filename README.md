@@ -32,3 +32,17 @@ rake db:seed
 cd <app path>
 rails server
 ```
+
+To create a post: $rake np <yourposttitle>
+
+Then, be sure to change published: true in config/jekyll/posts/<your post>
+
+To generate the blog html: $rake generate
+
+Then to push it through github:
+
+$ git add .
+$ git commit -m &lsquo;your commit message'
+$ git push
+
+Documentation on bloggy: https://blog.engineyard.com/2012/introducing-bloggy-a-simple-way-to-add-a-jekyll-blog-to-any-rails-application
